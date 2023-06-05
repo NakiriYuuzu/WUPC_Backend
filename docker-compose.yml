@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: pcbuilder
+      MYSQL_USER: yuuzu
+      MYSQL_PASSWORD: qwer
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+        - "3306:3306"
+
+  web:
+    image: pcbuilder
+    build: .
+    restart: always
+    command: [ "python", "manage.py", "runserver", "0.0.0.0:80" ]
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=pcbuilder
+      - DB_USER=yuuzu
+      - DB_PASSWORD=qwer
+
+volumes:
+  db_data:

@@ -1,0 +1,18 @@
+USE pcbuilder;
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (1, 'Brand PC', '品牌小主機');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (2, 'Laptop & Discount', '筆電');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (3, 'Custom Set PC', 'PC 套裝');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (4, 'CPU', null);
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (5, 'Motherboard', null);
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (6, 'RAM', null);
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (7, 'SSD', null);
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (8, 'HDD', '機器硬碟');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (9, 'Hard/PenDrive', '隨身碟');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (10, 'CPU Fan', '風冷');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (11, 'Water Cooling', '水冷');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (12, 'GPU', '<null>');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (13, 'Screen', '顯示器');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (14, 'Case', null);
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (15, 'PSU', null);
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (16, 'Fan', '風扇');
+INSERT IGNORE INTO pcbuilder.wupc_category (category_id, category_name, category_description) VALUES (17, 'Mouse & Keyboard', '鍵盤滑鼠');

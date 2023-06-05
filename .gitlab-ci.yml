@@ -1,0 +1,45 @@
+stages:
+  - build
+  - deploy
+
+build:
+  services:
+    - docker:20.10.24-dind
+  stage: build
+  tags:
+    - docker
+  script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - docker build -t $DOCKER_IMAGE:latest .
+    - docker push $DOCKER_IMAGE:latest
+
+deploy:
+  services:
+    - docker:20.10.24-dind
+  stage: deploy
+  tags:
+    - docker
+  script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - docker pull $DOCKER_IMAGE:latest
+    - |
+      if ! docker network inspect pcbuilder > /dev/null 2>&1; then
+        docker network create pcbuilder
+      fi
+    - |
+      if [ -z $(docker ps -q -f name=mariadb) ]; then
+        docker run --net pcbuilder --name mariadb -e MYSQL_ROOT_PASSWORD=qwer -e MYSQL_DATABASE=pcbuilder -e MYSQL_USER=yuuzu -e MYSQL_PASSWORD=qwer -p 3306:3306 -d --restart=always mariadb:latest
+        sleep 10
+      fi
+    - |
+      if [ ! -z $(docker ps -aq -f name=web) ]; then
+        docker rm -f web
+      fi
+    - docker run -d --restart=always --name web --net pcbuilder -e DB_HOST=mariadb -p 80:80 yuuzu/wupcbackend
+  after_script:
+    - docker image prune -f
+  environment:
+    name: wupcbuilder
+  only:
+    - master
+    

@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入Vue.js -->
+    <script src="{% static 'dist/main.css' %}"></script>
+</head>
+<body>
+<!-- Vue.js容器 -->
+<div id="app">
+    <!-- Vue.js生成的內容 -->
+    {{ message }}
+</div>
+
+<!-- 引入你的Vue.js代碼 -->
+<script src="{% static '' %}"></script>
+</body>
+
+</html>

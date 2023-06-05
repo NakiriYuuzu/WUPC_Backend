@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="wrapper">
+            <!-- big center area -->
+            <div class="left-side">
+                <h1>主機客制化</h1>
+
+                <!-- small center area -->
+                <div class="wrapper">
+                    <div class="left-half">
+                        <img src="dist/images/build/h9-case.webp" alt="logo"/>
+                    </div>
+                    <div class="right-half">
+                        <ul>
+                            <li>
+                                <div class="custom-card w-100 p-2">
+                                    <img src="https://via.placeholder.com/50" alt="...">
+                                    <div class="m-2">
+                                        <span>CPU</span>
+                                        <p>Intel i7-12700【12核/20緒】2.1GHz(↑4.9G)/25M/UHD770/65W【代理盒裝】</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h1>CPU</h1>
+                <div class="right-side-section">
+                    <div class="custom-shop-card m-2">
+                        <div class="row justify-content-between align-items-center p-2">
+                            <div class="col col-lg-3">
+                                <img class="shop-image" src="https://via.placeholder.com/150" alt="...">
+                            </div>
+                            <div class="col-md-9">
+                                <span class="shop-text">Intel i7-12700【12核/20緒】2.1GHz(↑4.9G)/25M/UHD770/65W【代理盒裝】</span>
+                                <p class="shop-cost">$10100</p>
+                            </div>
+                            <button class="btn btn-primary btn-sm shop-button" type="button">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bottom center area -->
+        <div class="bottom-wrapper">
+            <div class="bottom-area"></div>
+            <div class="bottom-area"><h1>總價格</h1></div>
+            <div class="bottom-area"><h1>下一頁</h1></div>
+        </div>
+    </main>
+{% endblock %}
